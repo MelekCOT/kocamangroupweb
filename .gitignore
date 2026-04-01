@@ -1,0 +1,27 @@
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs & temp
+*.log
+*.tmp
+*.cache
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Optional tooling
+node_modules/
+
+# WordPress (if project root is ever full WP)
+wp-config.php
+wp-content/uploads/

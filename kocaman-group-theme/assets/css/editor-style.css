@@ -1,0 +1,14 @@
+/**
+ * Blok düzenleyici — tema ile uyumlu tipografi
+ */
+
+body {
+	font-family: "DM Sans", system-ui, sans-serif;
+	color: #334155;
+}
+
+.editor-styles-wrapper .wp-block {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
