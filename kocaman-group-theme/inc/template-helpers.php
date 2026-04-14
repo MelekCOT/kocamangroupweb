@@ -40,12 +40,37 @@ function kocaman_get_option_field( $selector, $default = '' ) {
 }
 
 /**
+ * İletişimdeki adres satırının yönlendireceği harita / konum URL’si.
+ *
+ * @return string
+ */
+function kocaman_get_contact_map_url() {
+	$default = 'https://share.google/gWuYzB63KmKaYfNR0';
+	$url     = kocaman_get_option_field( 'contact_map_url', $default );
+	return apply_filters( 'kocaman_contact_map_url', $url ? $url : $default );
+}
+
+/**
+ * Hakkımızda sayfası kalıcı bağlantısı (sayfa yoksa varsayılan yol).
+ *
+ * @return string
+ */
+function kocaman_get_hakkimizda_url() {
+	$page = get_page_by_path( 'hakkimizda', OBJECT, 'page' );
+	if ( $page && 'publish' === $page->post_status ) {
+		return get_permalink( $page );
+	}
+	return home_url( '/hakkimizda/' );
+}
+
+/**
  * Menü atanmamışsa varsayılan bağlantılar
  */
 function kocaman_group_default_menu() {
-	$items = array(
+	$hakkimizda = kocaman_get_hakkimizda_url();
+	$items      = array(
 		''             => __( 'Anasayfa', 'kocaman-group' ),
-		'#hakkimizda'  => __( 'Hakkımızda', 'kocaman-group' ),
+		$hakkimizda    => __( 'Hakkımızda', 'kocaman-group' ),
 		'#faaliyet'    => __( 'Faaliyet Alanlarımız', 'kocaman-group' ),
 		'#markalar'    => __( 'Markalarımız', 'kocaman-group' ),
 		'#projeler'    => __( 'Projeler', 'kocaman-group' ),
@@ -54,7 +79,13 @@ function kocaman_group_default_menu() {
 	echo '<ul id="primary-menu" class="site-header__menu">';
 	$base = home_url( '/' );
 	foreach ( $items as $path => $label ) {
-		$url = '' === $path ? $base : $base . $path;
+		if ( '' === $path ) {
+			$url = $base;
+		} elseif ( 0 === strpos( $path, 'http' ) || 0 === strpos( $path, '/' ) ) {
+			$url = $path;
+		} else {
+			$url = $base . $path;
+		}
 		printf(
 			'<li class="menu-item"><a href="%s">%s</a></li>',
 			esc_url( $url ),
@@ -70,7 +101,7 @@ function kocaman_group_default_menu() {
 function kocaman_group_footer_fallback() {
 	echo '<ul class="site-footer__links">';
 	$links = array(
-		home_url( '/#hakkimizda' ) => __( 'Hakkımızda', 'kocaman-group' ),
+		kocaman_get_hakkimizda_url() => __( 'Hakkımızda', 'kocaman-group' ),
 		home_url( '/#faaliyet' )   => __( 'Faaliyet Alanlarımız', 'kocaman-group' ),
 		home_url( '/#markalar' )   => __( 'Markalarımız', 'kocaman-group' ),
 		home_url( '/#projeler' )   => __( 'Projeler', 'kocaman-group' ),

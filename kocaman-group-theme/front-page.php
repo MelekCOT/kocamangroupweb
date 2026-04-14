@@ -16,6 +16,7 @@ get_header();
 	<?php
 	get_template_part( 'template-parts/front/hero' );
 	get_template_part( 'template-parts/front/about' );
+	get_template_part( 'template-parts/front/vision-mission' );
 	get_template_part( 'template-parts/front/services' );
 	get_template_part( 'template-parts/front/brands' );
 	get_template_part( 'template-parts/front/projects' );

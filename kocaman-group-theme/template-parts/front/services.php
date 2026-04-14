@@ -18,6 +18,7 @@ $services = array(
 	),
 	array(
 		'title'    => 'Villatatilci',
+		'tagline'  => __( 'Çok yakında hizmetinizde', 'kocaman-group' ),
 		'desc'     => __( 'Konforlu ve seçkin villa tatili deneyimleri', 'kocaman-group' ),
 		'icon'     => 'sun',
 		'link_key' => 'villa',
@@ -48,6 +49,9 @@ $services = array(
 				<a class="service-card reveal" data-reveal href="<?php echo esc_url( kocaman_get_service_page_url( $s['link_key'] ) ); ?>" target="_blank" rel="noopener noreferrer">
 					<span class="service-card__icon service-card__icon--<?php echo esc_attr( $s['icon'] ); ?>" aria-hidden="true"></span>
 					<h3 class="service-card__title"><?php echo esc_html( $s['title'] ); ?></h3>
+					<?php if ( ! empty( $s['tagline'] ) ) : ?>
+						<p class="service-card__tagline"><?php echo esc_html( $s['tagline'] ); ?></p>
+					<?php endif; ?>
 					<p class="service-card__desc"><?php echo esc_html( $s['desc'] ); ?></p>
 					<span class="service-card__arrow" aria-hidden="true">→</span>
 				</a>

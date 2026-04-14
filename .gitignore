@@ -13,6 +13,10 @@ Desktop.ini
 *.log
 *.tmp
 *.cache
+.tmp-logo/
+
+# Büyük medya (GitHub 100MB sınırı; videoyu CDN veya sunucuya yükleyin)
+kocaman-group-theme/assets/video/*.mp4
 
 # Env / secrets
 .env

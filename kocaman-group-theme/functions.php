@@ -77,7 +77,7 @@ add_action( 'after_setup_theme', 'kocaman_group_content_width', 0 );
 function kocaman_group_scripts() {
 	wp_enqueue_style(
 		'kocaman-group-fonts',
-		'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@500;600;700;800&display=swap',
+		'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap',
 		array(),
 		null
 	);
@@ -119,6 +119,7 @@ add_action( 'wp_enqueue_scripts', 'kocaman_group_scripts' );
  * Yardımcı dosyalar
  */
 require_once KOCAMAN_GROUP_DIR . '/inc/template-helpers.php';
+require_once KOCAMAN_GROUP_DIR . '/inc/contact-form-handler.php';
 require_once KOCAMAN_GROUP_DIR . '/inc/service-detail-data.php';
 require_once KOCAMAN_GROUP_DIR . '/inc/legal-page-content.php';
 require_once KOCAMAN_GROUP_DIR . '/inc/legal-urls.php';

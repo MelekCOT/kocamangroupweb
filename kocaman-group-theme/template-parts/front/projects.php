@@ -11,9 +11,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $projects = array(
 	array(
-		'title' => __( 'Konut Projesi A', 'kocaman-group' ),
+		'title' => __( 'Yapı', 'kocaman-group' ),
 		'cat'   => __( 'İnşaat', 'kocaman-group' ),
 		'slug'  => 'insaat',
+		'media' => 'vitrin-yapi',
+	),
+	array(
+		'title' => __( 'Yapı', 'kocaman-group' ),
+		'cat'   => __( 'İnşaat', 'kocaman-group' ),
+		'slug'  => 'insaat',
+		'media' => 'vitrin-santiye',
 	),
 	array(
 		'title' => __( 'Villa Kompleksi', 'kocaman-group' ),
@@ -55,19 +62,23 @@ $projects = array(
 			<?php foreach ( $projects as $p ) : ?>
 				<article class="project-card reveal" data-reveal>
 					<?php
-					$media_class = 'project-card__media project-card__media--' . esc_attr( $p['slug'] );
-					if ( 'insaat' === $p['slug'] && isset( $p['insaat_visual'] ) && 'alt' === $p['insaat_visual'] ) {
-						$media_class .= ' project-card__media--insaat-alt';
-					}
-					if ( 'turizm' === $p['slug'] && isset( $p['turizm_visual'] ) && 'alt' === $p['turizm_visual'] ) {
-						$media_class .= ' project-card__media--turizm-alt';
+					if ( ! empty( $p['media'] ) ) {
+						$media_class = 'project-card__media project-card__media--' . esc_attr( $p['media'] );
+					} else {
+						$media_class = 'project-card__media project-card__media--' . esc_attr( $p['slug'] );
+						if ( 'insaat' === $p['slug'] && isset( $p['insaat_visual'] ) && 'alt' === $p['insaat_visual'] ) {
+							$media_class .= ' project-card__media--insaat-alt';
+						}
+						if ( 'turizm' === $p['slug'] && isset( $p['turizm_visual'] ) && 'alt' === $p['turizm_visual'] ) {
+							$media_class .= ' project-card__media--turizm-alt';
+						}
 					}
 					?>
 					<div class="<?php echo esc_attr( $media_class ); ?>">
 						<div class="project-card__overlay">
 							<span class="project-card__cat"><?php echo esc_html( $p['cat'] ); ?></span>
 							<h3 class="project-card__title"><?php echo esc_html( $p['title'] ); ?></h3>
-							<a class="btn btn--sm btn--light" href="#iletisim"><?php esc_html_e( 'Detay İncele', 'kocaman-group' ); ?></a>
+							<a class="btn btn--sm btn--light" href="#iletisim"><?php esc_html_e( 'İletişime geç', 'kocaman-group' ); ?></a>
 						</div>
 					</div>
 				</article>

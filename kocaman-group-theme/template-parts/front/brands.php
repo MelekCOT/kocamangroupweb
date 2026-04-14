@@ -18,11 +18,12 @@ $brands = array(
 		'tag'   => __( 'İnşaat · Proje', 'kocaman-group' ),
 	),
 	array(
-		'id'    => 'villa',
-		'label' => 'Villatatilci',
-		'short' => __( 'Turizm', 'kocaman-group' ),
-		'desc'  => __( 'Seçkin villa konaklamaları ve kişiselleştirilmiş tatil deneyimleri sunarak misafir memnuniyetini merkeze alırız.', 'kocaman-group' ),
-		'tag'   => __( 'Turizm · Villa', 'kocaman-group' ),
+		'id'      => 'villa',
+		'label'   => 'Villatatilci',
+		'tagline' => __( 'Çok yakında hizmetinizde', 'kocaman-group' ),
+		'short'   => __( 'Turizm', 'kocaman-group' ),
+		'desc'    => __( 'Seçkin villa konaklamaları ve kişiselleştirilmiş tatil deneyimleri sunarak misafir memnuniyetini merkeze alırız.', 'kocaman-group' ),
+		'tag'     => __( 'Turizm · Villa', 'kocaman-group' ),
 	),
 	array(
 		'id'    => 'chickers',
@@ -64,6 +65,9 @@ $brands = array(
 						<div class="brands__panel-content">
 							<span class="brands__tag"><?php echo esc_html( $b['tag'] ); ?></span>
 							<h3 class="brands__panel-title"><?php echo esc_html( $b['label'] ); ?></h3>
+							<?php if ( ! empty( $b['tagline'] ) ) : ?>
+								<p class="brands__panel-tagline"><?php echo esc_html( $b['tagline'] ); ?></p>
+							<?php endif; ?>
 							<p class="brands__panel-desc"><?php echo esc_html( $b['desc'] ); ?></p>
 							<a class="btn btn--primary" href="#iletisim"><?php esc_html_e( 'İletişime geçin', 'kocaman-group' ); ?></a>
 						</div>

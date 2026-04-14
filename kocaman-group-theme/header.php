@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			if ( has_custom_logo() ) {
 				the_custom_logo();
 			} else {
-				$kg_logo = get_template_directory_uri() . '/assets/images/kocaman-logo.svg';
+				$kg_logo = get_template_directory_uri() . '/assets/images/kocaman-logo.png';
 				?>
 				<a class="site-header__logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<img
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						src="<?php echo esc_url( $kg_logo ); ?>"
 						alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"
 						width="200"
-						height="64"
+						height="49"
 						decoding="async"
 					/>
 				</a>
@@ -67,7 +67,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<a class="site-header__cta btn btn--primary" href="<?php echo esc_url( home_url( '/#iletisim' ) ); ?>"><?php esc_html_e( 'Bize Ulaşın', 'kocaman-group' ); ?></a>
 		</nav>
 	</div>
-	<div class="site-header__progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="<?php esc_attr_e( 'Sayfa kaydırma ilerlemesi', 'kocaman-group' ); ?>" id="scroll-progress-wrap">
-		<span class="site-header__progress-fill" id="scroll-progress"></span>
-	</div>
 </header>
+<div class="site-header__progress" role="progressbar" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="<?php esc_attr_e( 'Sayfa kaydırma ilerlemesi', 'kocaman-group' ); ?>" id="scroll-progress-wrap">
+	<span class="site-header__progress-fill" id="scroll-progress"></span>
+</div>

@@ -52,6 +52,14 @@ function kocaman_group_acf_init() {
 					'rows'  => 2,
 				),
 				array(
+					'key'           => 'field_kg_contact_map_url',
+					'label'         => __( 'Adres harita bağlantısı', 'kocaman-group' ),
+					'name'          => 'contact_map_url',
+					'type'          => 'url',
+					'default_value' => 'https://share.google/gWuYzB63KmKaYfNR0',
+					'instructions'  => __( 'İletişim ve footer’daki adres satırı bu bağlantıya gider (Google Maps paylaşım vb.).', 'kocaman-group' ),
+				),
+				array(
 					'key'   => 'field_kg_footer_tagline',
 					'label' => __( 'Footer kısa açıklama', 'kocaman-group' ),
 					'name'  => 'footer_tagline',
@@ -60,7 +68,7 @@ function kocaman_group_acf_init() {
 				),
 				array(
 					'key'   => 'field_kg_whatsapp',
-					'label' => __( 'WhatsApp (ülke kodu ile, örn: 905551234567)', 'kocaman-group' ),
+					'label' => __( 'WhatsApp (ülke kodu ile, örn: 905512335293)', 'kocaman-group' ),
 					'name'  => 'whatsapp_number',
 					'type'  => 'text',
 				),
@@ -87,7 +95,7 @@ function kocaman_group_acf_init() {
 					'label'        => __( 'İletişim formu (CF7 kısa kod)', 'kocaman-group' ),
 					'name'         => 'contact_form_shortcode',
 					'type'         => 'text',
-					'instructions' => __( 'Örn: [contact-form-7 id="123" title="İletişim"]', 'kocaman-group' ),
+					'instructions' => __( 'Örn: [contact-form-7 id="123" title="İletişim"]. Mail sekmesinde alıcı: bilgi@kocamangroup.com.tr', 'kocaman-group' ),
 				),
 			),
 			'location'              => array(
