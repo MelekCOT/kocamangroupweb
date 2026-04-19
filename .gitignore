@@ -14,6 +14,7 @@ Desktop.ini
 *.tmp
 *.cache
 .tmp-logo/
+.tmp-logo-extract/
 
 # Büyük medya (GitHub 100MB sınırı; videoyu CDN veya sunucuya yükleyin)
 kocaman-group-theme/assets/video/*.mp4

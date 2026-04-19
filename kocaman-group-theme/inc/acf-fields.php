@@ -79,10 +79,11 @@ function kocaman_group_acf_init() {
 					'type'  => 'url',
 				),
 				array(
-					'key'   => 'field_kg_social_instagram',
-					'label' => 'Instagram URL',
-					'name'  => 'social_instagram',
-					'type'  => 'url',
+					'key'           => 'field_kg_social_instagram',
+					'label'         => 'Instagram URL',
+					'name'          => 'social_instagram',
+					'type'          => 'url',
+					'default_value' => 'https://www.instagram.com/kocamangroup/',
 				),
 				array(
 					'key'   => 'field_kg_social_tiktok',
